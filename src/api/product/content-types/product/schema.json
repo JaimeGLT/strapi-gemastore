@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "img2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "esNuevo": {
+      "type": "boolean",
+      "default": false
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria.categoria",
+      "inversedBy": "products"
+    },
+    "sub_categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-categoria.sub-categoria",
+      "inversedBy": "products"
+    },
+    "precio_con_descuento": {
+      "type": "decimal"
+    },
+    "marcas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::marca.marca",
+      "inversedBy": "products"
+    },
+    "coleccions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::coleccion.coleccion",
+      "inversedBy": "products"
+    }
+  }
+}

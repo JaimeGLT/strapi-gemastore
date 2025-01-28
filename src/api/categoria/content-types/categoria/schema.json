@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorias",
+  "info": {
+    "singularName": "categoria",
+    "pluralName": "categorias",
+    "displayName": "categoria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "categorias"
+    },
+    "sub_categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-categoria.sub-categoria",
+      "mappedBy": "categorias"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  }
+}
